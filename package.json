@@ -2,9 +2,10 @@
   "name": "request-parser",
   "version": "1.0.0",
   "description": "Request header parser microservice",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "test"
+    "start":"node server.js"
   },
   "keywords": [
     "request",

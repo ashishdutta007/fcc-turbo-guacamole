@@ -19,11 +19,13 @@ app.use('/api/whoami/', function(request, response) {
         return console.log("error: ", error);
     });
     //To get the ip of the requestor device
+    //request.headers['x-forwarded-for'] || request.connection.remoteAddress || request.ip
     var ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress || request.ip;
     //To get the language set in the client browser
     var lang = request.headers['accept-language'].split(",")[0];
     //To get the host OS of the client
     var os = request.headers['user-agent'].split("(")[1].split(")")[0];
+    console.log("os: ", os);
     response.json({
         "ipaddress": ip,
         "language": lang,
