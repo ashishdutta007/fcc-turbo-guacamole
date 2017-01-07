@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/views'));
 
 //Middleware(specific path request handler) for request-headder-parser
 //Express req and res is wrapper around node's req and res
-app.use('/api/whoami/', function(request, response) {
+app.use('/api/whoami', function(request, response) {
     request.on('error', function(error) {
         return console.log("error: ", error);
     });
@@ -25,7 +25,6 @@ app.use('/api/whoami/', function(request, response) {
     var lang = request.headers['accept-language'].split(",")[0];
     //To get the host OS of the client
     var os = request.headers['user-agent'].split("(")[1].split(")")[0];
-    console.log("os: ", os);
     response.json({
         "ipaddress": ip,
         "language": lang,

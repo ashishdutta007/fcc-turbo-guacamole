@@ -4,7 +4,7 @@
   "description": "Request header parser microservice",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
     "start":"node server.js"
   },
   "keywords": [
